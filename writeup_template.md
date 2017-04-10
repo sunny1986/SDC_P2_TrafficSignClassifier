@@ -15,9 +15,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./datasetexplore.jpg
-[image2]: ./hists.jpg
-[image3]: ./accuracies.jpg
+[image1]: ./datasetexplore.JPG
+[image2]: ./hists.JPG
+[image3]: ./accuracies.JPG
 [image4]: ./web1.jpg
 [image5]: ./web2.jpg
 [image6]: ./web3.jpg

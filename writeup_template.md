@@ -15,9 +15,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./writeupimages/datasetexplore.jpg
-[image2]: ./writeupimages/hists.jpg
-[image3]: ./writeupimages/accuracies.jpg
+[image1]: ./datasetexplore.jpg
+[image2]: ./hists.jpg
+[image3]: ./accuracies.jpg
 [image4]: ./web1.jpg
 [image5]: ./web2.jpg
 [image6]: ./web3.jpg
@@ -28,7 +28,7 @@ The goals / steps of this project are the following:
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-The submission includes the project code and a write up report. What you're reading is the report and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+The submission includes the project code and a write up report. What you're reading is the report and here is a link to my [project code](https://github.com/sunny1986/SDC_P2_TrafficSignClassifier/blob/master/Traffic_Sign_Classifier_Final_Solution.ipynb)
 
 #### Data Set Summary & Exploration
 

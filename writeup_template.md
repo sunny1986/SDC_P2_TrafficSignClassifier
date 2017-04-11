@@ -18,18 +18,18 @@ The goals / steps of this project are the following:
 [image1]: ./datasetexplore.JPG
 [image2]: ./hists.JPG
 [image3]: ./accuracies.JPG
-[image4]: ./training_history.jpg
-[image5]: ./training_history_early_term.jpg
+[image4]: ./training_history.JPG
+[image5]: ./training_history_early_term.JPG
 [image6]: ./web1.jpg
 [image7]: ./web2.jpg
 [image8]: ./web3.jpg
 [image9]: ./web4.jpg
 [image10]: ./web5.jpg
-[image11]: ./web1_softmax.jpg
-[image12]: ./web2_softmax.jpg
-[image13]: ./web3_softmax.jpg
-[image14]: ./web4_softmax.jpg
-[image15]: ./web5_softmax.jpg
+[image11]: ./web1_softmax.JPG
+[image12]: ./web2_softmax.JPG
+[image13]: ./web3_softmax.JPG
+[image14]: ./web4_softmax.JPG
+[image15]: ./web5_softmax.JPG
 
 #### Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  

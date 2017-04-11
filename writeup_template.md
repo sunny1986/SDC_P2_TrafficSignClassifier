@@ -18,11 +18,18 @@ The goals / steps of this project are the following:
 [image1]: ./datasetexplore.JPG
 [image2]: ./hists.JPG
 [image3]: ./accuracies.JPG
-[image4]: ./web1.jpg
-[image5]: ./web2.jpg
-[image6]: ./web3.jpg
-[image7]: ./web4.jpg
-[image8]: ./web5.jpg
+[image4]: ./training_history.jpg
+[image5]: ./training_history_early_term.jpg
+[image6]: ./web1.jpg
+[image7]: ./web2.jpg
+[image8]: ./web3.jpg
+[image9]: ./web4.jpg
+[image10]: ./web5.jpg
+[image11]: ./web1_softmax.jpg
+[image12]: ./web2_softmax.jpg
+[image13]: ./web3_softmax.jpg
+[image14]: ./web4_softmax.jpg
+[image15]: ./web5_softmax.jpg
 
 #### Rubric Points
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -80,10 +87,10 @@ My final model was based on the LeNet architecture which consisted of the follow
 | Layer         			|     Description	        					| 
 |:---------------------:	|:---------------------------------------------:| 
 | Input         			| 32x32x3 RGB image   							| 
-| Convolution 5x5     		| 1x1 stride, same padding, outputs 28x28x6 	|
+| Convolution 5x5     		| 1x1 stride, VALID padding, outputs 28x28x6 	|
 | Activation: RELU			|												|
 | Max pooling	      		| 2x2 stride,  outputs 14x14x6  				|
-| Convolution 5x5	    	| 1x1 stride, same padding, outputs 10x10x16 	|
+| Convolution 5x5	    	| 1x1 stride, VALID padding, outputs 10x10x16 	|
 | Activation: RELU			|												|
 | Max pooling	      		| 2x2 stride,  outputs 5x5x16   				|
 | Fully connected			| Flattened input 400 outputs 120   			|
@@ -108,7 +115,13 @@ To train the model, I chose a batch size of 64 and a total of 250 epochs. I used
 ##### Training Approach
 CODE CELL # 8 of the ipython notebook 
 
-My final model results were:
+Plot showing training history with 250 Epochs:
+
+![alt text][image4]
+
+###### No Early termination
+
+My model results without early termination:
 * training set accuracy of 100%
 * validation set accuracy of 97.7%
 * test set accuracy of 94.7%
@@ -122,13 +135,23 @@ Steps on training and improving the model
 * The LeNet architecture is a good starting point for this problem since it can deal very well with translation invariance as seen in this model's successful performance in case of MNIST dataset. The traffic signs can be anywhere in image frames captured by a self-driving vehicle hence it is a good application for the LeNet model for classication.
 * Also this architecture provides flexibility to add more layers amd make the network deeper in order to resolve complex problems like the problem of traffic sign classification. 
 
+###### Early termination
+Looking at the training history and to avoid overfitting, I used the model with early termination and retrained for 90 epochs instead of the 250.
+
+![alt text][image5]
+
+My model results were with early termination:
+* training set accuracy of 99.9% (prevented overfitting)
+* validation set accuracy of 97.7% (remained same)
+* test set accuracy of 95.2% (slight improvement in test accuracy)
+
 
 #### Test a Model on New Images
 
 ##### Here are the five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6] ![alt text][image7] ![alt text][image8] 
+![alt text][image9] ![alt text][image10]
 
 Image 1, 3 & 5 might be tricky to identify since the signs are at a different perspective and look sheared by certain degree. The training data set that is provided has signs which are mostly straight from one's perspective and have almost no shear or rotational component relative to the image axes. Images 2 & 4 are relatively similar to the training set images. However it will be interesting to find if the last image is correctly identified or not since it is pretty close to the perspective of the training set images.
 
@@ -142,89 +165,51 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Keep Right      		| Double Curve 									| 
-| Children Crossing		| Speed limit (80km/h)							|
-| Pedestrian Crossing 	| Right-of-way at the next intersection			|
+| Keep Right      		| General caution								| 
+| Children Crossing		| Keep left         							|
+| Pedestrian Crossing 	| Road work             						|
 | Bumpy Road	   		| Bumpy Road					 				|
 | Stop Sign 			| Priority road     							|
 
 Looking at the performance of the model on these web images and the possible features that make it difficult for the model to correctly predict, further improvements on the model can include training data augmentation like flipping, rotating, introducing noise in the images and increasing the size of the training set.
 
-##### Softmax probabilities for web images 
+##### Softmax probabilities for web images
 CODE CELL # 13 of the Ipython notebook.
 
 ###### For the 1st image:
 
-Top prediction > Double curve sign
-Actual         > Keep right sign. 
+* Actual         > Keep right 
+* Top prediction > General caution
 
-The top five soft max probabilities were:
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .85         			| Double curve 									| 
-| .11     				| Speed limit (20km/h)							|
-| .02					| Priority Road									|
-| .0001	      			| Turn Right Ahead				 				|
-| .0001				    | Speed Limit(30km/h)  							|
+![alt text][image11]
 
 ###### For the 2nd image: 
 
-Top prediction > Children crossing sign
-Actual         > Speed limit (80km/h) 
+* Actual         > Children crossing sign
+* Top prediction > Keep left
 
-The top five soft max probabilities were:
+![alt text][image12]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .97         			| Speed limit (80km/h)							| 
-| .02     				| No passing for vehicles over 3.5 metric tons	|
-| .003					| Speed limit (50km/h)							|
-| .000	      			| Speed limit (70km/h)			 				|
-| .000				    | Speed Limit(20km/h)  							|
 
 ###### For the 3rd image:
 
-Top prediction > Pedestrian crossing sign
-Actual         > Right-of-way at the next intersection
+* Actual         > Pedestrian crossing sign
+* Top prediction > Road work
 
-The top five soft max probabilities were:
+![alt text][image13]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .99         			| Right-of-way at the next intersection			| 
-| .005     				| No passing for vehicles over 3.5 metric tons	|
-| .002					| Traffic Signals								|
-| .000	      			| Priority Road	    			 				|
-| .000				    | Double curve 									|
 
 ###### For the 4th image:
 
-Top prediction > Bumpy Road sign
-Actual         > Bumpy Road sign
+* Actual         > Bumpy Road sign
+* Top prediction > Bumpy Road sign
 
-The top five soft max probabilities were:
+![alt text][image14]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-|  1.00        			| Bumpy Road                        			| 
-| 0     				| Keep Right                                	|
-| 0 					| Traffic Signals								|
-| 0	        			| Road Work	        			 				|
-| 0 				    | Bicycles crossing								|
 
 ###### For the 5th image:
 
-Top prediction > Stop sign
-Actual         > Priority Road
+* Actual         > Priority Road
+* Top prediction > Stop sign
 
-The top five soft max probabilities were:
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1.00         			| Priority Road                        			| 
-| 0     				| Yield                                     	|
-| 0	    				| No entry      								|
-| 0	        			| Speed Limit(20km/h) 			 				|
-| 0 				    | Go straight or left							|
-
+![alt text][image15]

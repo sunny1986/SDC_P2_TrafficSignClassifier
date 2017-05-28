@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./datasetexplore.JPG
+[image1]: ./writeupimages/datasetexplore.JPG
 [image2]: ./hists.JPG
 [image3]: ./accuracies.JPG
 [image4]: ./training_history.JPG

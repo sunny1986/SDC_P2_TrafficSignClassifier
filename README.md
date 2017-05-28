@@ -16,20 +16,20 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./writeupimages/datasetexplore.JPG
-[image2]: ./hists.JPG
+[image2]: ./writeupimages/hists.JPG
 [image3]: ./accuracies.JPG
-[image4]: ./training_history.JPG
-[image5]: ./training_history_early_term.JPG
-[image6]: ./web1.jpg
-[image7]: ./web2.jpg
-[image8]: ./web3.jpg
-[image9]: ./web4.jpg
-[image10]: ./web5.jpg
-[image11]: ./web1_softmax.JPG
-[image12]: ./web2_softmax.JPG
-[image13]: ./web3_softmax.JPG
-[image14]: ./web4_softmax.JPG
-[image15]: ./web5_softmax.JPG
+[image4]: ./writeupimages/training_history.JPG
+[image5]: ./writeupimages/training_history_early_term.JPG
+[image6]: ./writeupimages/web1.jpg
+[image7]: ./writeupimages/web2.jpg
+[image8]: ./writeupimages/web3.jpg
+[image9]: ./writeupimages/web4.jpg
+[image10]: ./writeupimages/web5.jpg
+[image11]: ./writeupimages/web1_softmax.JPG
+[image12]: ./writeupimages/web2_softmax.JPG
+[image13]: ./writeupimages/web3_softmax.JPG
+[image14]: ./writeupimages/web4_softmax.JPG
+[image15]: ./writeupimages/web5_softmax.JPG
 
 ---
 The submission includes the project code and a write up report. What you're reading is the report and here is a link to my [project code](https://github.com/sunny1986/SDC_P2_TrafficSignClassifier/blob/master/Traffic_Sign_Classifier_Final_Solution.ipynb)
